@@ -1,0 +1,433 @@
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  color: #f5deb3;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Container above background */
+.app-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* MAIN LAYOUT */
+.center-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100vh;
+  padding: 40px 20px;
+
+  width: 100%;
+  max-width: 1400px;   /* 🔥 increased width */
+  margin: 0 auto;
+}
+
+/* Title */
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #f5deb3;
+}
+
+/* Developer text */
+.developers {
+  font-size: 18px;   /* 🔥 increased from 15px */
+  color: #a3b18a;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+/* Buttons */
+.main-btn {
+  margin: 12px;
+  padding: 14px 28px;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    145deg,
+    #fff4dc,
+    #f5deb3
+  );
+
+  color: #2b2b2b;
+  border: none;
+
+  font-weight: 600;
+  font-size: 16px;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  box-shadow: 0 4px 12px rgba(245, 222, 179, 0.3);
+
+  width: 280px;
+  max-width: 90%;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #fff2d5
+  );
+
+  box-shadow: 0 6px 16px rgba(245, 222, 179, 0.6);
+}
+
+.main-btn:active {
+  transform: scale(0.98);
+}
+
+/* Input fields */
+.input-box {
+  width: 280px;
+  max-width: 90%;
+
+  padding: 12px;
+  margin: 10px;
+
+  border-radius: 10px;
+  border: 1px solid #f5deb3;
+
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5deb3;
+
+  outline: none;
+  text-align: center;
+}
+
+/* Section spacing */
+h3 {
+  margin-top: 30px;
+}
+
+/* MATRIX CONTAINER (MAIN FIX) */
+.matrix-row-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 60px;
+  margin-top: 40px;
+
+  flex-wrap: wrap;   /* 🔥 IMPORTANT → prevents vertical stacking */
+  overflow-x: auto;    /* 🔥 allows scroll if screen small */
+
+  width: 100%;
+}
+
+/* EACH MATRIX BLOCK */
+.matrix-section {
+  flex: 0 0 auto;   /* 🔥 VERY IMPORTANT */
+  min-width: 320px; /* ensures proper size */
+}
+
+/* TABLE */
+.matrix-table {
+  border-collapse: collapse;
+
+  margin-top: 10px;
+
+  width: auto;                 /* 🔥 prevents stretching */
+  min-width: 250px;
+  max-width: 400px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* TABLE CELLS */
+.matrix-table th,
+.matrix-table td {
+  border: 1px solid #f5deb3;
+  padding: 10px;
+
+  min-width: 60px;             /* 🔥 prevents collapse */
+  text-align: center;
+}
+
+/* HEADER STYLE */
+.matrix-table th {
+  background: rgba(245, 222, 179, 0.15);
+}
+
+/* INPUT INSIDE TABLE */
+.table-input {
+  width: 60px;
+  padding: 6px;
+
+  border-radius: 6px;
+  border: 1px solid #f5deb3;
+
+  background: rgba(255,255,255,0.05);
+  color: #f5deb3;
+
+  text-align: center;
+}
+
+/* RESULT BOX */
+.result-box {
+  margin-top: 20px;
+  padding: 20px;
+
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #f5deb3;
+
+  color: #f5deb3;
+  text-align: center;
+
+  width: 100%;
+  max-width: 600px;
+}
+
+/* BUTTON GROUP */
+.action-buttons {
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 15px;
+}
+
+/* STEPPER */
+.stepper-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.stepper p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.stepper-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  background: rgba(255,255,255,0.05);
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #f5deb3;
+}
+
+.stepper-box button {
+  width: 32px;
+  height: 32px;
+
+  border-radius: 6px;
+  border: 1px solid #f5deb3;
+
+  background: rgba(245, 222, 179, 0.15);
+  color: #f5deb3;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.stepper-box span {
+  font-size: 18px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.stepper-box button:hover {
+  background: rgba(245, 222, 179, 0.35);
+  transform: scale(1.05);
+}
+
+.stepper-box button:active {
+  transform: scale(0.95);
+}
+
+/* BACK BUTTON */
+.back-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+
+  width: 40px;
+  height: 40px;
+
+  border-radius: 50%;
+  border: 1px solid #f5deb3;
+
+  background: rgba(245, 222, 179, 0.15);
+
+  color: #f5deb3;
+  font-size: 20px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.3s ease;
+}
+
+.back-icon:hover {
+  background: rgba(245, 222, 179, 0.35);
+  transform: scale(1.1);
+}
+
+.back-icon:active {
+  transform: scale(0.95);
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .matrix-row-container {
+    gap: 30px;
+  }
+
+  .matrix-section {
+    min-width: 100%;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .main-btn {
+    width: 90%;
+  }
+}
+.matrix-row-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.matrix-row-container::-webkit-scrollbar-thumb {
+  background: #f5deb3;
+  border-radius: 10px;
+}
+
+.matrix-horizontal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  gap: 60px;
+  margin-top: 40px;
+
+  flex-wrap: nowrap;     /* 🔥 horizontal only here */
+  overflow-x: auto;      /* scroll if needed */
+
+  width: 100%;
+}
+
+.home-container {
+  min-height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding-top: 40px;   /* 🔥 ADD THIS (moves content slightly up) */
+}
+
+/* Toggle button */
+.toggle-btn {
+  margin: 10px 0 15px;
+  padding: 8px 16px;
+
+  border-radius: 8px;
+  border: 1px solid #f5deb3;
+
+  background: rgba(245, 222, 179, 0.1);
+  color: #f5deb3;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background: rgba(245, 222, 179, 0.3);
+}
+
+/* Collapsible box */
+.desc-box {
+  position: absolute;
+  top: 70px;      /* 🔥 just below button */
+  right: 25px;    /* 🔥 SAME as button */
+
+  width: 300px;
+
+  max-height: 0;
+  overflow: hidden;
+
+  transition: max-height 0.4s ease;
+}
+
+/* When open */
+.desc-box.show {
+  max-height: 400px;
+}
+
+/* Text inside */
+.desc-box p {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #f5deb3;
+
+  padding: 15px;
+  border-radius: 10px;
+
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* 🔥 Top-right floating info button */
+.info-btn {
+  position: absolute;
+  top: 25px;      /* slightly higher */
+  right: 25px;
+
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+  border: 1px solid #f5deb3;
+
+  background: rgba(245, 222, 179, 0.15);
+  color: #f5deb3;
+
+  font-size: 18px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info-btn:hover {
+  background: rgba(245, 222, 179, 0.35);
+  transform: scale(1.1);
+}
+
+.info-btn:active {
+  transform: scale(0.95);
+}
