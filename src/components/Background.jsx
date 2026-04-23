@@ -38,12 +38,6 @@ const Background = () => {
       active: false,
     };
 
-    const interval = setInterval(() => {
-      shootingStar.active = true;
-      shootingStar.x = -50;
-      shootingStar.y = Math.random() * height * 0.5;
-    }, 5000);
-
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
 
@@ -60,26 +54,6 @@ const Background = () => {
         ctx.fill();
       });
 
-      if (shootingStar.active) {
-        ctx.beginPath();
-        ctx.moveTo(shootingStar.x, shootingStar.y);
-        ctx.lineTo(
-          shootingStar.x - shootingStar.length,
-          shootingStar.y + shootingStar.length / 4
-        );
-        ctx.strokeStyle = "white";
-        ctx.lineWidth = 2;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "white";
-        ctx.stroke();
-
-        shootingStar.x += shootingStar.speed;
-        shootingStar.y += shootingStar.speed / 4;
-
-        if (shootingStar.x - shootingStar.length > width) {
-          shootingStar.active = false;
-        }
-      }
 
       requestAnimationFrame(animate);
     };
@@ -88,7 +62,7 @@ const Background = () => {
 
     return () => {
       window.removeEventListener("resize", resize);
-      clearInterval(interval);
+      // clearInterval(interval);
     };
   }, []);
 
