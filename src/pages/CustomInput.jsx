@@ -26,9 +26,9 @@ function CustomInput() {
     const p = processes;
     const r = resources;
 
-    setAllocation(Array(p).fill().map(() => Array(r).fill(0)));
-    setMax(Array(p).fill().map(() => Array(r).fill(0)));
-    setTotal(Array(r).fill(0));
+    setAllocation(Array(p).fill().map(() => Array(r).fill(1)));
+    setMax(Array(p).fill().map(() => Array(r).fill(1)));
+    setTotal(Array(r).fill(1));
 
     setShowMatrices(true);
     setNeed([]);
